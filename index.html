@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quarterly Earnings — Interactive Reveal.js</title>
+
+  <!-- Reveal.js core from UNPKG CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/theme/solarized.css" id="theme">
+
+  <!-- Highlight.js for code syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+
+  <!-- KaTeX for math rendering (used by Reveal's math plugin) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+
+  <style>
+    /* Small styling tweaks for better readability */
+    .reveal .slides section { font-size: 1.05rem; }
+    pre code { font-size: 0.9rem; }
+    .email { position: absolute; right: 1rem; bottom: 1rem; opacity: 0.85; }
+  </style>
+</head>
+<body>
+
+<div class="reveal">
+  <div class="slides">
+
+    <!-- Title slide -->
+    <section>
+      <h1>Q4 Quarterly Earnings — Interactive Report</h1>
+      <h3>Modern presentation with Reveal.js</h3>
+      <p class="email">Contact: <a href="mailto:22f2001391@ds.study.iitm.ac.in">22f2001391@ds.study.iitm.ac.in</a></p>
+      <aside class="notes">
+        Introduce yourself and the purpose of the presentation. Highlight key KPIs (revenue, net income, EPS).
+      </aside>
+    </section>
+
+    <!-- Markdown slide (using data-markdown) -->
+    <section data-markdown>
+<![CDATA[
+## Executive Summary
+
+- **Revenue**: Up 6% QoQ
+- **Net Income**: Down 2% YoY due to higher provisions
+- **EPS**: ₹ 12.34
+
+> *We saw continued strength in fees and trading, offset by margin compression.*
+
+*Use the notes to expand on each bullet.*
+]]>
+    </section>
+
+    <!-- Animated fragments -->
+    <section>
+      <h2>Key Drivers</h2>
+      <ul>
+        <li class="fragment">Fee income growth (digital products)</li>
+        <li class="fragment">Higher provisioning for credit losses</li>
+        <li class="fragment">One-time tax adjustments</li>
+      </ul>
+      <aside class="notes">
+        Use the fragments: reveal each item one-by-one while explaining.
+      </aside>
+    </section>
+
+    <!-- Code sample with syntax highlighting -->
+    <section>
+      <h2>Example: Quick P&L Calculation (Python)</h2>
+      <pre><code class="language-python"># Simple earnings-per-share calculation
+                    net_income = 1_200_000_000  # in INR
+                    shares_outstanding = 97_500_000
+                    eps = net_income / shares_outstanding
+                    print(f"EPS = ₹{eps:.2f}")</code></pre>
+      <aside class="notes">Explain assumptions: numbers are illustrative.</aside>
+    </section>
+
+    <!-- Another code sample (JS) -->
+    <section>
+      <h2>Interactive Chart Setup (JS)</h2>
+      <pre><code class="language-javascript">// Create a small chart using Chart.js (example snippet)
+const ctx = document.getElementById('chart').getContext('2d');
+const myChart = new Chart(ctx, {
+  type: 'bar',
+  data: { labels: ['Fees','Trading','Net Interest'], datasets: [{ data: [120,80,200] }] }
+});</code></pre>
+      <aside class="notes">You can embed live charts; this slide shows how to initialize Chart.js.</aside>
+    </section>
+
+    <!-- Mathematical equations slide -->
+    <section>
+      <h2>Financial Formula — Return on Equity (ROE)</h2>
+      <p>ROE is defined as:</p>
+      <p class="fragment">\(\displaystyle \text{ROE} = \dfrac{\text{Net Income}}{\text{Average Shareholders' Equity}}\)</p>
+      <p class="fragment">If net income = \(N\) and equity = \(E\), then \(\text{ROE} = N/E\).</p>
+      <aside class="notes">
+        Walk through an example calculation using the company's numbers. Show sensitivity to equity changes.
+      </aside>
+    </section>
+
+    <!-- Slide with speaker note longer guidance -->
+    <section>
+      <h2>Talking Points — Q&A Prep</h2>
+      <ol>
+        <li class="fragment">Explain impact of provisioning on margins.</li>
+        <li class="fragment">Highlight growth in fee-based revenue.</li>
+        <li class="fragment">Address capital adequacy and regulatory outlook.</li>
+      </ol>
+      <aside class="notes">
+        Anticipate questions on credit quality and guidance for next quarter. Keep answers concise and backed by data.
+      </aside>
+    </section>
+
+    <!-- Closing slide -->
+    <section>
+      <h2>Thank you</h2>
+      <p>Contact: <a href="mailto:22f2001391@ds.study.iitm.ac.in">22f2001391@ds.study.iitm.ac.in</a></p>
+      <aside class="notes">Invite follow-up meetings and provide contact details.</aside>
+    </section>
+
+  </div>
+</div>
+
+<!-- Reveal.js and plugins -->
+<script src="https://unpkg.com/reveal.js@4/dist/reveal.js"></script>
+<script src="https://unpkg.com/reveal.js@4/plugin/markdown/markdown.js"></script>
+<script src="https://unpkg.com/reveal.js@4/plugin/highlight/highlight.js"></script>
+<script src="https://unpkg.com/reveal.js@4/plugin/notes/notes.js"></script>
+<script src="https://unpkg.com/reveal.js@4/plugin/math/math.js"></script>
+
+<!-- Highlight.js core for syntax highlighting -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<script>
+  // Initialize Reveal
+  Reveal.initialize({
+    hash: true,
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+    center: true,
+    slideNumber: true,
+    math: {
+      // KaTeX options
+      katex: {
+        throwOnError: false
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
